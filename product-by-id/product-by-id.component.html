@@ -1,0 +1,51 @@
+<app-sidebar></app-sidebar>
+<div class="main-content">
+    <app-navbar></app-navbar>
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+        style="height: 150px; background-size: cover; background-position: center top;">
+        <!-- Mask -->
+        <span class="mask opacity-8"
+            style="background-color:#20bf55;background-image:linear-gradient(315deg, #20bf55 0%, #01baef 74%);"></span>
+        <!-- Header container -->
+        <div class="container-fluid align-items-center">
+            <div class="row mt-3">
+                <div class="col-lg-7 col-md-10 mt-6">
+                    <h1 class="display-2 text-white">Hello Jesse</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 3%;">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+            <div class="col mb-4" *ngFor="let item of prdList">
+                <div class="card bg-secondary shadow">
+                    <div class="card-header bg-white border-0 d-flex align-items-center">
+                        <img src="assets/img/theme/team-4-800x800.jpg" class="rounded-circle" height="100px"
+                            width="auto">
+                    </div>
+                    <div class="card-body">
+
+
+                        <h3 class="p-3 text-center">Display Product By Id</h3>
+                        <div class="p-3 text-center">
+
+                            <input type="text" [(ngModel)]="id" size="10" />
+
+                            <button (click)="onSearch()">Search</button>
+
+                        </div>
+                        <div class="container">
+                        <h3>{{item.productId}}</h3>
+                        <h3>{{item.productName}}</h3>
+                        <button>VIEW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <app-footer></app-footer>
+    </div>
+</div>
